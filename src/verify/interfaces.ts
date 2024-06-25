@@ -9,6 +9,8 @@ export interface VerifyOptions {
 
 export interface VerifyResponseSuccess {
     id: string;
+    status: string;
+    message: string;
 }
 
 export interface VerifyResponse {

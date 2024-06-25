@@ -1,8 +1,8 @@
-import { version } from './version';
 import { Emails } from './emails/emails';
-import { Verify } from './verify/verify';
 import { isAuthsendErrorResponse } from './guards';
 import type { ErrorResponse } from './interfaces';
+import { Verify } from './verify/verify';
+import { version } from './version';
 
 const baseUrl = 'https://authsend-api.bfnsga.workers.dev';
 const userAgent = `authsend-node:${version}`;

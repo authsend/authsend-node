@@ -35,7 +35,7 @@ Verify the OTP sent in the verification email.
 ```js
 await authsend.verify.check({
   id: "041a87ff-60be-4054-a96f-9bf0c7f0beaf",
-  otp: "123456",
+  code: "123456",
 });
 ```
 

@@ -3,8 +3,11 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   release:
@@ -26,10 +29,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v4
-        with:
-          semantic_version: 19
+      - name: Install dependencies
+        run: npm clean-install
+
+      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+        run: npm audit signatures
+
+      - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release

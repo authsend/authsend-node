@@ -1,4 +1,4 @@
-import { version } from '../package.json';
+import { version } from './version';
 import { Emails } from './emails/emails';
 import { Verify } from './verify/verify';
 import { isAuthsendErrorResponse } from './guards';
